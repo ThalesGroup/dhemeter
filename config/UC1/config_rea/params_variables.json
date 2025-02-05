@@ -1,0 +1,102 @@
+{
+    "ERA5_SINGLE_LEVEL": {
+        "variables": [
+            {
+                "variable": "10m_u_component_of_wind",
+                "description": "10 metre U wind component",
+                "level_type": "single-level",
+                "level_type_name": "surface",
+                "levels": null
+            },
+            {
+                "variable": "10m_v_component_of_wind",
+                "description": "10 metre V wind component",
+                "level_type": "single-level",
+                "level_type_name": "surface",
+                "levels": null
+            },
+            {
+                "variable": "2m_dewpoint_temperature",
+                "description": "2 metre dewpoint temperature",
+                "level_type": "single-level",
+                "level_type_name": "surface",
+                "levels": null
+            },
+            {
+                "variable": "2m_temperature",
+                "description": "2 metre temperature",
+                "level_type": "single-level",
+                "level_type_name": "surface",
+                "levels": null
+            },
+            {
+                "variable": "surface_pressure",
+                "description": "Surface pressure",
+                "level_type": "single-level",
+                "level_type_name": "surface",
+                "levels": null
+            },
+            {
+                "variable": "boundary_layer_height",
+                "description": "Boundary layer height",
+                "level_type": "single-level",
+                "level_type_name": "surface",
+                "levels": null
+            }
+        ]
+    },
+    "ERA5_PRESSURE_LEVELS": {
+        "variables": [
+            {
+                "variable": "temperature",
+                "description": "Temperature",
+                "level_type": "pressure-level",
+                "level_type_name": "isobaricInhPa",
+                "levels": [
+                    850,
+                    500
+                ]
+            },
+            {
+                "variable": "u_component_of_wind",
+                "description": "U component of wind",
+                "level_type": "pressure-level",
+                "level_type_name": "isobaricInhPa",
+                "levels": [
+                    850,
+                    500
+                ]
+            },
+            {
+                "variable": "v_component_of_wind",
+                "description": "V component of wind",
+                "level_type": "pressure-level",
+                "level_type_name": "isobaricInhPa",
+                "levels": [
+                    850,
+                    500
+                ]
+            },
+            {
+                "variable": "vertical_velocity",
+                "description": "Vertical velocity",
+                "level_type": "pressure-level",
+                "level_type_name": "isobaricInhPa",
+                "levels": [
+                    850,
+                    500
+                ]
+            },
+            {
+                "variable": "relative_humidity",
+                "description": "Relative humidity",
+                "level_type": "pressure-level",
+                "level_type_name": "isobaricInhPa",
+                "levels": [
+                    850,
+                    500
+                ]
+            }
+        ]
+    }
+}

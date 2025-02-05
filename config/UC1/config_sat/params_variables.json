@@ -1,0 +1,9 @@
+{
+    "SY_2_AOD": {
+        "variables": [
+                {
+                    "name": "AOD_550_Merged_OceanLand"
+                }
+            ]
+    }
+}

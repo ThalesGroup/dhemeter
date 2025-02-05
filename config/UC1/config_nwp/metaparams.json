@@ -1,0 +1,22 @@
+{
+    "SOURCE": "FORECAST",
+	"MODEL": {
+        "GFS": false,
+        "ICON_GLOBAL": false,
+        "ICON_EU": true,
+        "IFS": false
+        },
+        "STEP": {
+            "MERGE": true,
+            "interpolate-temporally": false,
+            "interpolate-spatially": false,
+            "box": true
+        },
+        "PARAMETER": {
+            "grid": false,
+            "western_lon": 0.0,
+            "eastern_lon": 5.0,
+            "southern_lat": 40.0,
+            "northern_lat": 45.0
+        }
+}

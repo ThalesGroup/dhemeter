@@ -1,0 +1,19 @@
+{
+    	"SOURCE": "REANALYSIS",
+	"MODEL": {
+            "ERA5_PRESSURE_LEVELS": true,
+            "ERA5_SINGLE_LEVEL": true
+        },
+        "STEP": {
+            "MERGE": true,
+            "interpolate-temporally": false,
+            "interpolate-spatially": false,
+            "box": false
+        },
+        "PARAMETER": {
+            "western_lon": -7.0,
+            "eastern_lon": 21.0,
+            "southern_lat": 27.0,
+            "northern_lat": 53.0
+        }
+}

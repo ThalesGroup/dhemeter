@@ -1,0 +1,42 @@
+{
+    "IFS": {
+        "variables": [
+            {
+                "variable": "v",
+                "description": "V component of wind",
+                "level_type": "pressure-level",
+                "level_type_name": "isobaricInhPa",
+                "levels": [
+                    1000,
+                    925,
+                    850
+                ]
+            },
+            {
+                "variable": "u",
+                "description": "U component of wind",
+                "level_type": "pressure-level",
+                "level_type_name": "isobaricInhPa",
+                "levels": [
+                    1000,
+                    925,
+                    850
+                ]
+            },
+            {
+                "variable": "10u",
+                "description": "10 metre U wind component",
+                "level_type": "single-level",
+                "level_type_name": "heightAboveGround",
+                "levels": null
+            },
+            {
+                "variable": "10v",
+                "description": "10 metre V wind component",
+                "level_type": "single-level",
+                "level_type_name": "heightAboveGround",
+                "levels": null
+            }
+        ]
+    }
+}

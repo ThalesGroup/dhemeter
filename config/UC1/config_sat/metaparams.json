@@ -1,0 +1,17 @@
+{
+    "SOURCE": "SATELLITE",
+	"MODEL": {
+            "SY_2_AOD": true
+    },
+    "STEP": {
+        "MERGE": true
+    },
+    "PARAMETER": {
+        "grid": 0.05,
+        "mode": "AM",
+        "western_lon": -7.0,
+        "eastern_lon": 21.0,
+        "southern_lat": 27.0,
+        "northern_lat": 53.0
+    }
+}

@@ -1,0 +1,556 @@
+{
+	"config": {
+		"SOURCES": {
+			"NWP": {
+				"MODEL": [
+					{
+						"_name": "GFS",
+						"_mode": "global",
+						"_order": 4,
+						"run_hours": {
+							"run_hour": [
+							{
+								"value": 0,
+								"Hours_Steps": {
+								"step": [
+									{
+										"value": 1,
+										"min": 0,
+										"max": 120
+									},
+									{
+										"value": 3,
+										"min": 123,
+										"max": 384
+									}
+								]
+								}
+							},
+							{
+								"value": 6,
+								"Hours_Steps": {
+								"step": [
+									{
+										"value": 1,
+										"min": 0,
+										"max": 120
+										},
+										{
+										"value": 3,
+										"min": 123,
+										"max": 384
+									}
+								]
+								}
+							},
+							{
+								"value": 12,
+								"Hours_Steps": {
+								"step": [
+									{
+										"value": 1,
+										"min": 0,
+										"max": 120
+										},
+										{
+										"value": 3,
+										"min": 123,
+										"max": 384
+									}
+								]
+								}
+							},
+							{
+								"value": 18,
+								"Hours_Steps": {
+								"step": [
+									{
+										"value": 1,
+										"min": 0,
+										"max": 120
+										},
+										{
+										"value": 3,
+										"min": 123,
+										"max": 384
+									}
+								]
+								}
+							}
+							]
+						}
+					},
+					{
+						"_name": "ICON_GLOBAL",
+						"_mode": "single",
+						"_order": 3,
+						"run_hours": {
+							"run_hour": [
+							{
+								"value": 0,
+								"Hours_Steps": {
+								"step": [
+									{
+										"value": 1,
+										"min": 0,
+										"max": 78
+									},
+									{
+										"value": 6,
+										"min": 81,
+										"max": 120
+									}
+								]
+								}
+							},
+							{
+								"value": 6,
+									"Hours_Steps": {
+									"step": [
+										{
+											"value": 1,
+											"min": 0,
+											"max": 78
+										},
+										{
+											"value": 6,
+											"min": 81,
+											"max": 120
+										}
+									]
+								}
+							},
+							{
+								"value": 12,
+									"Hours_Steps": {
+									"step": [
+										{
+											"value": 1,
+											"min": 0,
+											"max": 78
+										},
+										{
+											"value": 6,
+											"min": 81,
+											"max": 120
+										}
+									]
+								}
+							},
+							{
+								"value": 18,
+									"Hours_Steps": {
+									"step": [
+										{
+											"value": 1,
+											"min": 0,
+											"max": 78
+										},
+										{
+											"value": 6,
+											"min": 81,
+											"max": 120
+										}
+									]
+								}
+							}
+							]
+						}
+					},
+					{
+						"_name": "IFS",
+						"_mode": "global",
+						"_order": 2,
+						"run_hours": {
+							"run_hour": [
+							{
+								"value": 0,
+								"Hours_Steps": {
+								"step": [
+									{
+									"value": 3,
+									"min": 0,
+									"max": 144
+									},
+									{
+									"value": 6,
+									"min": 150,
+									"max": 240
+									}
+								]
+								}
+							},
+							{
+								"value": 12,
+								"Hours_Steps": {
+								"step": [
+									{
+									"value": 3,
+									"min": 0,
+									"max": 144
+									},
+									{
+									"value": 6,
+									"min": 150,
+									"max": 240
+									}
+								]
+								}
+							}
+							]
+						}
+					},
+					{
+						"_name": "ICON_EU",
+						"_mode": "single",
+						"_order": 1,
+						"run_hours": {
+							"run_hour": [
+							{
+								"value": 0,
+								"Hours_Steps": {
+								"step": [
+									{
+										"value": 1,
+										"min": 0,
+										"max": 78
+									},
+									{
+										"value": 6,
+										"min": 81,
+										"max": 120
+									}
+								]
+								}
+							},
+							{
+								"value": 3,
+								"Hours_Steps": {
+								"step": [
+									{
+										"value": 1,
+										"min": 0,
+										"max": 30
+									},
+									{
+										"value": 6,
+										"min": 36,
+										"max": 48
+									}
+								]
+								}
+							},
+							{
+								"value": 6,
+									"Hours_Steps": {
+									"step": [
+										{
+											"value": 1,
+											"min": 0,
+											"max": 78
+										},
+										{
+											"value": 6,
+											"min": 81,
+											"max": 120
+										}
+									]
+								}
+							},
+							{
+								"value": 9,
+								"Hours_Steps": {
+								"step": [
+									{
+										"value": 1,
+										"min": 0,
+										"max": 30
+									},
+									{
+										"value": 6,
+										"min": 36,
+										"max": 48
+									}
+								]
+								}
+							},
+							{
+								"value": 12,
+									"Hours_Steps": {
+									"step": [
+										{
+											"value": 1,
+											"min": 0,
+											"max": 78
+										},
+										{
+											"value": 6,
+											"min": 81,
+											"max": 120
+										}
+									]
+								}
+							},
+							{
+								"value": 15,
+								"Hours_Steps": {
+								"step": [
+									{
+										"value": 1,
+										"min": 0,
+										"max": 30
+									},
+									{
+										"value": 6,
+										"min": 36,
+										"max": 48
+									}
+								]
+								}
+							},
+							{
+								"value": 18,
+									"Hours_Steps": {
+									"step": [
+										{
+											"value": 1,
+											"min": 0,
+											"max": 78
+										},
+										{
+											"value": 6,
+											"min": 81,
+											"max": 120
+										}
+									]
+								}
+							},
+							{
+								"value": 21,
+								"Hours_Steps": {
+								"step": [
+									{
+										"value": 1,
+										"min": 0,
+										"max": 30
+									},
+									{
+										"value": 6,
+										"min": 36,
+										"max": 48
+									}
+								]
+								}
+							}
+							]
+						}
+					},
+					{
+						"_name": "ARPEGE_EU",
+						"_mode": "single",
+						"run_hours": {
+							"run_hour": [
+							{
+								"value": 0,
+								"Hours_Steps": {
+								"step": [
+									{
+										"value": 1,
+										"min": 0,
+										"max": 51
+									}
+								]
+								}
+							},
+							{
+								"value": 6,
+									"Hours_Steps": {
+									"step": [
+										{
+											"value": 1,
+											"min": 0,
+											"max": 51
+										}
+									]
+								}
+							},
+							{
+								"value": 12,
+									"Hours_Steps": {
+									"step": [
+										{
+											"value": 1,
+											"min": 0,
+											"max": 51
+										}
+									]
+								}
+							},
+							{
+								"value": 18,
+									"Hours_Steps": {
+									"step": [
+										{
+											"value": 1,
+											"min": 0,
+											"max": 51
+										}
+									]
+								}
+							}
+							]
+						}
+					},
+					{
+						"_name": "ARPEGE_GLOBAL",
+						"_mode": "single",
+						"run_hours": {
+							"run_hour": [
+							{
+								"value": 0,
+								"Hours_Steps": {
+								"step": [
+									{
+										"value": 1,
+										"min": 0,
+										"max": 51
+									}
+								]
+								}
+							},
+							{
+								"value": 6,
+									"Hours_Steps": {
+									"step": [
+										{
+											"value": 1,
+											"min": 0,
+											"max": 51
+										}
+									]
+								}
+							},
+							{
+								"value": 12,
+									"Hours_Steps": {
+									"step": [
+										{
+											"value": 1,
+											"min": 0,
+											"max": 51
+										}
+									]
+								}
+							},
+							{
+								"value": 18,
+									"Hours_Steps": {
+									"step": [
+										{
+											"value": 1,
+											"min": 0,
+											"max": 51
+										}
+									]
+								}
+							}
+							]
+						}
+					},
+					{
+						"_name": "AROME_0025",
+						"_mode": "single"
+					},
+					{
+						"_name": "AROME_001",
+						"_mode": "single"
+					},
+					{
+						"_name": "AROME_PI_001",
+						"_mode": "single"
+					},
+					{
+						"_name": "AROME_PI_0025",
+						"_mode": "single"
+					}
+				]
+			},
+			"LOCAL_NWP": {
+				"MODEL": [
+					{
+						"_name": "AROME_0025",
+						"_mode": "single"
+					},
+					{
+						"_name": "AROME_001",
+						"_mode": "single"
+					},
+					{
+						"_name": "AROME_PI_001",
+						"_mode": "single"
+					},
+					{
+						"_name": "AROME_PI_0025",
+						"_mode": "single"
+					},
+					{
+						"_name": "ICON_D2",
+						"_mode": "single"
+					}
+				]
+			},
+			"AIR": {
+				"MODEL": [
+					{
+						"_name": "METAR",
+						"_mode": "global"
+					},
+					{
+						"_name": "AIREP_PIREP",
+						"_mode": "global"
+					},
+					{
+						"_name": "IGRA",
+						"_mode": "global"
+					},
+					{
+						"_name": "RS_MF",
+						"_mode": "global"
+					}
+				]
+			},
+			"REANALYSIS": {
+				"MODEL": [
+					{
+						"_name": "ERA5_SINGLE_LEVEL",
+						"_mode": "custom"
+					},
+					{
+						"_name": "ERA5_PRESSURE_LEVELS",
+						"_mode": "custom"
+					}
+				]
+			},
+			"SATELITE": {
+				"MODEL": [
+					{
+						"_name": "SY_2_AOD",
+						"_mode": ["AM", "PM"],
+						"_quality_index": "NaN",
+						"_time": "time",
+						"_lat": "latitude",
+						"_lon": "longitude"
+					},
+					{
+						"_name": "S5P",
+						"_mode": ["AM", "PM"],
+						"_quality_index": "NaN",
+						"_time": "time",
+						"_lat": "latitude",
+						"_lon": "longitude"
+					}
+				]
+			}
+		}
+	}
+}

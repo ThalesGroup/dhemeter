@@ -1,0 +1,77 @@
+<!-- config file for METAR -->
+
+<!--Created 2023-08-21 -->
+<!--Create GDAS class configuration file -->
+
+<config>
+    <class name="METAR">
+        <root_data value='https://www.aviationweather.gov/metar/data?'/>
+        <storage_format value='HTML'/>
+        <days_storage value='13'/>
+        <localisation_options>
+            <Id_type value='ICAO'/>
+        </localisation_options>
+        <time_format value='YYYYMMDDHH'/>
+        <format value='raw'/>
+        <model name='METAR'>
+            <limit_last_day value='False'/>
+            <type_observation value="past-hours"/>
+            <past-hours unit='h' choice='listed'>
+                <hour value='1'/>
+                <hour value='2'/>
+                <hour value='3'/>
+                <hour value='4'/>
+                <hour value='5'/>
+                <hour value='6'/>
+                <hour value='12'/>
+                <hour value='18'/>
+                <hour value='24'/>
+                <hour value='36'/>
+                <hour value='48'/>
+                <hour value='72'/>
+                <hour value='96'/>
+                <hour value='120'/>
+            </past-hours>
+            <levels>
+                <time-invariant>
+                    <info/>
+                </time-invariant>
+                <Pressure-level-LatLon>
+                    <Punctual/>
+                </Pressure-level-LatLon>
+            </levels>
+            <variables>
+                <variable name="time" description="time of observation">
+                    <level-types>
+                        <level-type type="Pressure-level-LatLon" name="Punctual"/>
+                    </level-types>
+                </variable>
+                <variable name="temp" description="Temperature">
+                    <level-types>
+                        <level-type type="Pressure-level-LatLon" name="Punctual"/>
+                    </level-types>
+                </variable>
+                <variable name="dewpt" description="Dew Point Temperature">
+                    <level-types>
+                        <level-type type="Pressure-level-LatLon" name="Punctual"/>
+                    </level-types>
+                </variable>
+                <variable name="wind_speed" description="Wind speed">
+                    <level-types>
+                        <level-type type="Pressure-level-LatLon" name="Punctual"/>
+                    </level-types>
+                </variable>
+                <variable name="wind_dir" description="Wind direction">
+                    <level-types>
+                        <level-type type="Pressure-level-LatLon" name="Punctual"/>
+                    </level-types>
+                </variable>
+                <variable name="vis" description="Visibility (meters)">
+                    <level-types>
+                        <level-type type="Pressure-level-LatLon" name="Punctual"/>
+                    </level-types>
+                </variable>
+            </variables>
+        </model>
+    </class>
+</config>

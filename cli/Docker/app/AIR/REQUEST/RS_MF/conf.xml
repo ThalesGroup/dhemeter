@@ -1,0 +1,83 @@
+<!-- config file for RADIO SONDAGE METEO FRANCE -->
+
+<!--Created 2023-08-21 -->
+<!--Create RS METEOF class configuration file -->
+
+<config>
+    <class name="RS">
+            <root_data value= 'https://donneespubliques.meteofrance.fr/donnees_libres/Txt/RS_HR_complet/' />
+            <storage_format value='csv'/>
+            <days_storage value='13'/>
+            <localisation_options>
+                <Id_type value='MF'/>
+                <latlon>
+                    <point lat='0' lon='0'/>
+                    <range min_lat='-90' max_lat='90' min_lon='0' max_lon='360'/>
+                </latlon>
+            </localisation_options>
+            <time_format value='YYYYMMDDHH'/>
+            <format value='csv'/>
+            <model name='MF'>
+                <limit_last_day value='False'/> 
+                <type_observation value="obs-hours"/>
+                <obs-hours hour='00' delivery_hour='08' next_day='False'/>
+                <obs-hours hour='12' delivery_hour='16' next_day='False'/>
+                <levels>
+                    <Pressure-level-LatLon-LatLon>
+                        <Full-scale unit="hPa"/>
+                    </Pressure-level-LatLon-LatLon>
+                    <Altitude-level-LatLon-LatLon>
+                        <Full-scale unit="m"/>
+                    </Altitude-level-LatLon-LatLon>
+                </levels>
+                <variables>
+                    <variable name="p_niv" description="Pression du niveau">
+                        <level-types>
+                            <level-type type="Altitude-level-LatLon" name="Full-scale"/>
+                        </level-types>
+                    </variable>
+                    <variable name="altitude" description="Altitude du niveau">
+                        <level-types>
+                            <level-type type="Pressure-level-LatLon" name="Full-scale"/>
+                        </level-types>
+                    </variable>
+                    <variable name="t" description="Température">
+                        <level-types>
+                            <level-type type="Pressure-level-LatLon" name="Full-scale"/>
+                            <level-type type="Altitude-level-LatLon" name="Full-scale"/>
+                        </level-types>
+                    </variable>
+                    <variable name="td" description="Température du point de rosée">
+                        <level-types>
+                            <level-type type="Pressure-level-LatLon" name="Full-scale"/>
+                            <level-type type="Altitude-level-LatLon" name="Full-scale"/>
+                        </level-types>
+                    </variable>
+                    <variable name="dd" description="Direction du vent">
+                        <level-types>
+                            <level-type type="Pressure-level-LatLon" name="Full-scale"/>
+                            <level-type type="Altitude-level-LatLon" name="Full-scale"/>
+                        </level-types>
+                    </variable>
+                    <variable name="ff" description="Force du vent">
+                        <level-types>
+                            <level-type type="Pressure-level-LatLon" name="Full-scale"/>
+                            <level-type type="Altitude-level-LatLon" name="Full-scale"/>
+                        </level-types>
+                    </variable>
+                    <variable name="dep_lat" description="Déplacement en latitude"> 
+                        <level-types>
+                            <level-type type="Pressure-level-LatLon" name="Full-scale"/>
+                            <level-type type="Altitude-level-LatLon" name="Full-scale"/>
+                        </level-types>
+                    </variable>
+                    <variable name="dep_lon" description="Déplacement en longitude">
+                        <level-types>
+                            <level-type type="Pressure-level-LatLon" name="Full-scale"/>
+                            <level-type type="Altitude-level-LatLon" name="Full-scale"/>
+                        </level-types>
+                    </variable>
+                </variables>
+            </model>
+    </class>
+</config>

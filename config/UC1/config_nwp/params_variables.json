@@ -1,0 +1,20 @@
+{
+    "ICON_EU": {
+        "variables": [
+            {
+                "variable": "t_2m",
+                "description": "Temperature at 2m above ground",
+                "level_type": "single-level",
+                "level_type_name": "heightAboveGround",
+                "levels": null
+            },
+            {
+                "variable": "tot_prec",
+                "description": "Total precipitation (accumulated since model start)",
+                "level_type": "single-level",
+                "level_type_name": "surface",
+                "levels": null
+            }
+        ]
+    }
+}

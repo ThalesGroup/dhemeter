@@ -1,0 +1,45 @@
+{
+    "ICON_EU": {
+        "variables": [
+            {
+                "variable": "u_10m",
+                "description": "Zonal wind at 10m above ground",
+                "level_type": "single-level",
+                "level_type_name": "heightAboveGround",
+                "levels": null
+            },
+            {
+                "variable": "v_10m",
+                "description": "Meridional wind at 10m above ground",
+                "level_type": "single-level",
+                "level_type_name": "heightAboveGround",
+                "levels": null
+            },
+            {
+                "variable": "tot_prec",
+                "description": "Total precipitation (accumulated since model start)",
+                "level_type": "single-level",
+                "level_type_name": "surface",
+                "levels": null
+            }
+        ]
+    },
+    "GFS": {
+        "variables": [
+            {
+                "variable": "2t",
+                "description": "2 metre temperature",
+                "level_type": "single-level",
+                "level_type_name": "heightAboveGround",
+                "levels": null
+            },
+            {
+                "variable": "2sh",
+                "description": "2 metre specific humidity",
+                "level_type": "single-level",
+                "level_type_name": "heightAboveGround",
+                "levels": null
+            }
+        ]
+    }
+}

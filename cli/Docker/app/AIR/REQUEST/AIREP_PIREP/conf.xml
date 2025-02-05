@@ -1,0 +1,89 @@
+<!-- config file for AIREP & PIREP -->
+
+<!--Created 2023-08-21 -->
+<!--Create METAR class configuration file -->
+
+<config>
+    <class name="AIREP">
+        <root_data value='https://www.aviationweather.gov/airep/data?'/>
+        <storage_format value='HTML'/>
+        <days_storage value='13'/>
+        <localisation_options>
+            <Id_type value='ICAO'/>
+            <latlon>
+                <point lat='0' lon='0'/>
+                <range min_lat='-90' max_lat='90' min_lon='0' max_lon='360'/>
+                <precision lat='0.01' lon='0.01'/>
+            </latlon>
+        </localisation_options>
+        <time_format value='YYYYMMDDHH'/>
+        <format value='raw'/>
+        <model name='AIREP'>
+            <limit_last_day value='False'/>
+            <type_observation value="past-hours"/>
+            <tafs value='off'/>
+            <Distances unit='sm'>
+                <distance value='20'/>
+                <distance value='50'/>
+                <distance value='100'/>
+                <distance value='150'/>
+                <distance value='200'/>
+                <distance value='250'/>
+                <distance value='300'/>
+            </Distances>
+            <past-hours unit='h' choice="listed">
+                <hour value='1'/>
+                <hour value='1.5'/>
+                <hour value='2'/>
+                <hour value='3'/>
+                <hour value='4'/>
+                <hour value='5'/>
+                <hour value='6'/>
+                <hour value='12'/>
+                <hour value='18'/>
+                <hour value='24'/>
+                <hour value='36'/>
+            </past-hours>
+            <levels>
+                <time-invariant>
+                    <infos/>
+                </time-invariant>
+                <Altitude-level-LatLon>
+                    <Punctual/>
+                </Altitude-level-LatLon>
+            </levels>
+            <variables>
+                <variable name="Aircraft type:" description="Aircraft type">
+                    <level-types>
+                        <level-type type="time-invariant" name="info"/>
+                    </level-types>
+                </variable>
+                <variable name="Observed at:" description="The time the report was given">
+                    <level-types>
+                        <level-type type="Altitude-level-LatLon" name="Punctual"/>
+                    </level-types>
+                </variable>
+                <variable name="Temperature:" description="Temperature">
+                    <level-types>
+                        <level-type type="Altitude-level-LatLon" name="Punctual"/>
+                    </level-types>
+                </variable>
+                <variable name="Winds:" description="Wind direction and speed">
+                    <level-types>
+                        <level-type type="Altitude-level-LatLon" name="Punctual"/>
+                    </level-types>
+                </variable>
+                <variable name="Turbulence:" description="Turbulence">
+                    <level-types>
+                        <level-type type="Altitude-level-LatLon" name="Punctual"/>
+                    </level-types>
+                </variable>
+                <variable name="Icing:" description="Icing">
+                    <level-types>
+                        <level-type type="Altitude-level-LatLon" name="Punctual"/>
+                    </level-types>
+                </variable>
+            </variables>
+        </model>
+    </class>
+</config>

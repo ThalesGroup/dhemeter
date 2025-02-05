@@ -1,0 +1,693 @@
+<!--config file for GFS from NOAA (GFS) model-->
+
+<!--Created 2023-08-21-->
+<!--Create GFS class configuration file-->
+
+<config>
+    <class name="GFS">
+        <root_data value = 'https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/'/>
+        <storage_format value='grib2'/> <!--format of the data-->
+        <days_storage value='9'/> <!--days of storage-->
+        <days_format value='YYYYMMDD'/> <!--format of the days-->
+        <forecast_hour_format value='HHH'/> <!--format of the forecast hours-->
+        <model_version value='gfs'/> <!--version of the model-->
+        <coordinates step='0.25'> 
+            <west value='-180.00'/> <!--coordinates of the model-->
+            <east value='179.75'/>
+            <south value='-90.00'/>
+            <north value='90.00'/>
+        </coordinates>
+        <grid_type value='regular_latlon'> <!--grid type-->
+            <horizontal_resolution value='0.25'/> <!--horizontal resolution-->
+        </grid_type>
+        <model name='atmos'>
+            <limit_last_day value='False'/> <!--limit last day-->
+            <run_hours hour='00' delivery_hour='06' next_day='False'> <!--run hours for each day-->
+                <Hours_Steps> <!--Temporal resolution of the model -->
+                    <step hours='1' min='0' max='120'/>
+                    <step hours='3' min='123' max='384'/>
+                </Hours_Steps>
+            </run_hours>
+            <run_hours hour='06' delivery_hour='12' next_day='False'> <!--run hours for each day-->
+                <Hours_Steps> <!--Temporal resolution of the model -->
+                    <step hours='1' min='0' max='120'/>
+                    <step hours='3' min='123' max='384'/>
+                </Hours_Steps>
+            </run_hours>
+            <run_hours hour='12' delivery_hour='18' next_day='False'> <!--run hours for each day-->
+                <Hours_Steps> <!--Temporal resolution of the model -->
+                    <step hours='1' min='0' max='120'/>
+                    <step hours='3' min='123' max='384'/>
+                </Hours_Steps>
+            </run_hours>
+            <run_hours hour='18' delivery_hour='00' next_day='True'> <!--run hours for each day-->
+                <Hours_Steps> <!--Temporal resolution of the model -->
+                    <step hours='1' min='0' max='120'/>
+                    <step hours='3' min='123' max='384'/>
+                </Hours_Steps>
+            </run_hours>
+            <levels>
+                <single-level>
+                    <meanSea/>
+                    <hybrid/>
+                    <atmosphere/>
+                    <surface/>
+                    <planetaryBoundaryLayer/>
+                    <heightAboveGround/>
+                    <heightAboveSea/>
+                    <atmosphereSingleLayer/>
+                    <lowCloudLayer/>
+                    <middleCloudLayer/>
+                    <highCloudLayer/>
+                    <cloudCeiling/>
+                    <convectiveCloudBottom/>
+                    <lowCloudBottom/>
+                    <middleCloudBottom/>
+                    <highCloudBottom/>
+                    <convectiveCloudTop/>
+                    <lowCloudTop/>
+                    <middleCloudTop/>
+                    <highCloudTop/>
+                    <convectiveCloudLayer/>
+                    <boundaryLayerCloudLayer/>
+                    <nominalTop/>
+                    <heightAboveGroundLayer/>
+                    <tropopause/>
+                    <maxWind/>
+                    <isothermZero/>
+                    <highestTroposphericFreezing/>
+                    <pressureFromGroundLayer/>
+                    <sigmaLayer/>
+                    <sigma/>
+                    <potentialVorticity/>
+                </single-level>
+                <pressure-level>
+                    <isobaricInhPa unit='hPa'>
+                        <level value='1000'/>
+                        <level value='975'/>
+                        <level value='950'/>
+                        <level value='925'/>
+                        <level value='900'/>
+                        <level value='850'/>
+                        <level value='800'/>
+                        <level value='750'/>
+                        <level value='700'/>
+                        <level value='650'/>
+                        <level value='600'/>
+                        <level value='550'/>
+                        <level value='500'/>
+                        <level value='450'/>
+                        <level value='400'/>
+                        <level value='350'/>
+                        <level value='300'/>
+                        <level value='250'/>
+                        <level value='200'/>
+                        <level value='150'/>
+                        <level value='100'/>
+                        <level value='70'/>
+                        <level value='50'/>
+                        <level value='40'/>
+                        <level value='30'/>
+                        <level value='20'/>
+                        <level value='10'/>
+                        <level value='7'/>
+                        <level value='5'/>
+                        <level value='3'/>
+                        <level value='2'/>
+                        <level value='1'/>
+                    </isobaricInhPa>
+                </pressure-level>
+                <soil-level>
+                    <depthBelowLandLayer unit='m'>
+                        <level value="0.1"/>
+                        <level value="0.4"/>
+                        <level value="1.0"/>
+                        <level value="2.0"/>
+                    </depthBelowLandLayer>
+                </soil-level>
+            </levels>
+            <variables>
+                <variable name="prmsl" description="Pressure reduced to MSL">
+                    <level-types>
+                        <level-type type="single-level" name="meanSea"/>
+                    </level-types>
+                </variable>
+                <variable name="clwmr" description="Cloud mixing ratio">
+                    <level-types>
+                        <level-type type="single-level" name="hybrid"/>
+                        <level-type type="pressure-level" name="isobaricInhPa"/>
+                    </level-types>
+                </variable>
+                <variable name="icmr" description="Ice water mixing ratio">
+                    <level-types>
+                        <level-type type="single-level" name="hybrid"/>
+                        <level-type type="pressure-level" name="isobaricInhPa"/>
+                    </level-types>
+                </variable>
+                <variable name="rwmr" description="Rain mixing ratio">
+                    <level-types>
+                        <level-type type="single-level" name="hybrid"/>
+                    </level-types>
+                </variable>
+                <variable name="snmr" description="Snow mixing ratio">
+                    <level-types>
+                        <level-type type="single-level" name="hybrid"/>
+                        <level-type type="pressure-level" name="isobaricInhPa"/>
+                    </level-types>
+                </variable>
+                <variable name="grle" description="Graupel (snow pellets)">
+                    <level-types>
+                        <level-type type="single-level" name="hybrid"/>
+                        <level-type type="pressure-level" name="isobaricInhPa"/>
+                    </level-types>
+                </variable>
+                <variable name="refd" description="Derived radar reflectivity">
+                    <level-types>
+                        <level-type type="single-level" name="hybrid"/>
+                        <level-type type="single-level" name="heightAboveGround"/>
+                    </level-types>
+                </variable>
+                <variable name="refc" description="Maximum/Composite radar reflectivity">
+                <level-types>
+                    <level-type type="single-level" name="atmosphere"/>
+                </level-types></variable>
+                <variable name="vis" description="Visibility">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="u" description="U component of wind">
+                    <level-types>
+                        <level-type type="single-level" name="planetaryBoundaryLayer"/>
+                        <level-type type="pressure-level" name="isobaricInhPa"/>
+                        <level-type type="single-level" name="tropopause"/>
+                        <level-type type="single-level" name="maxWind"/>
+                        <level-type type="single-level" name="heightAboveGround"/>
+                        <level-type type="single-level" name="heightAboveSea"/>
+                        <level-type type="single-level" name="pressureFromGroundLayer"/>
+                        <level-type type="single-level" name="sigma"/>
+                        <level-type type="single-level" name="potentialVorticity"/>
+                    </level-types>
+                </variable>
+                <variable name="v" description="V component of wind">
+                    <level-types>
+                        <level-type type="single-level" name="planetaryBoundaryLayer"/>
+                        <level-type type="pressure-level" name="isobaricInhPa"/>
+                        <level-type type="single-level" name="tropopause"/>
+                        <level-type type="single-level" name="maxWind"/>
+                        <level-type type="single-level" name="heightAboveGround"/>
+                        <level-type type="single-level" name="heightAboveSea"/>
+                        <level-type type="single-level" name="pressureFromGroundLayer"/>
+                        <level-type type="single-level" name="sigma"/>
+                        <level-type type="single-level" name="potentialVorticity"/>
+                    </level-types>
+                </variable>
+                <variable name="VRATE" description="Ventilation Rate">
+                    <level-types>
+                        <level-type type="single-level" name="planetaryBoundaryLayer"/>
+                    </level-types>
+                </variable>
+                <variable name="gust" description="Wind speed (gust)">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="r" description="Relative humidity">
+                    <level-types>
+                        <level-type type="pressure-level" name="isobaricInhPa"/>
+                        <level-type type="single-level" name="atmosphereSingleLayer"/>
+                        <level-type type="single-level" name="isothermZero"/>
+                        <level-type type="single-level" name="highestTroposphericFreezing"/>
+                        <level-type type="single-level" name="pressureFromGroundLayer"/>
+                        <level-type type="single-level" name="sigmaLayer"/>
+                        <level-type type="single-level" name="sigma"/>
+                    </level-types>
+                </variable>
+                <variable name="w" description="Vertical velocity">
+                    <level-types>
+                        <level-type type="pressure-level" name="isobaricInhPa"/>
+                        <level-type type="single-level" name="sigma"/>
+                    </level-types>
+                </variable>
+                <variable name="wz" description="Geometric vertical velocity">
+                    <level-types>
+                        <level-type type="pressure-level" name="isobaricInhPa"/>
+                    </level-types>
+                </variable>
+                <variable name="absv" description="Absolute vorticity">
+                    <level-types>
+                        <level-type type="pressure-level" name="isobaricInhPa"/>
+                    </level-types>
+                </variable>
+                <variable name="o3mr" description="Ozone mixing ratio">
+                    <level-types>
+                        <level-type type="pressure-level" name="isobaricInhPa"/>
+                    </level-types>
+                </variable>
+                <variable name="hindex" description="Haines Index">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="mslet" description="MSLP (Eta model reduction)">
+                    <level-types>
+                        <level-type type="single-level" name="meanSea"/>
+                    </level-types>
+                </variable>
+                <variable name="sp" description="Surface pressure">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="orog" description="Orography">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="t" description="Temperature">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                        <level-type type="pressure-level" name="isobaricInhPa"/>
+                        <level-type type="single-level" name="lowCloudTop"/>
+                        <level-type type="single-level" name="middleCloudTop"/>
+                        <level-type type="single-level" name="highCloudTop"/>
+                        <level-type type="single-level" name="tropopause"/>
+                        <level-type type="single-level" name="maxWind"/>
+                        <level-type type="single-level" name="heightAboveGround"/>
+                        <level-type type="single-level" name="heightAboveSea"/>
+                        <level-type type="single-level" name="pressureFromGroundLayer"/>
+                        <level-type type="single-level" name="sigma"/>
+                        <level-type type="single-level" name="potentialVorticity"/>
+                    </level-types>
+                </variable>
+                <variable name="st" description="Soil Temperature">
+                    <level-types>
+                        <level-type type="soil-level" name="depthBelowLandLayer"/>
+                    </level-types>
+                </variable>
+                <variable name="soilw" description="Volumetric soil moisture content">
+                    <level-types>
+                        <level-type type="soil-level" name="depthBelowLandLayer"/>
+                    </level-types>
+                </variable>
+                <variable name="soill" description="Liquid volumetric soil moisture (non-frozen)">
+                    <level-types>
+                        <level-type type="soil-level" name="depthBelowLandLayer"/>
+                    </level-types>
+                </variable>
+                <variable name="cnwat" description="Plant canopy surface water">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="sdwe" description="Water equivalent of accumulated snow depth (deprecated)">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="sde" description="Snow depth">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="pevpr" description="Potential evaporation rate">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="icetk" description="Ice thickness">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="2t" description="2 metre temperature">
+                    <level-types>
+                        <level-type type="single-level" name="heightAboveGround"/>
+                    </level-types>
+                </variable>
+                <variable name="2sh" description="2 metre specific humidity">
+                    <level-types>
+                        <level-type type="single-level" name="heightAboveGround"/>
+                    </level-types>
+                </variable>
+                <variable name="2d" description="2 metre dewpoint temperature">
+                    <level-types>
+                        <level-type type="single-level" name="heightAboveGround"/>
+                    </level-types>
+                </variable>
+                <variable name="2r" description="2 metre relative humidity">
+                    <level-types>
+                        <level-type type="single-level" name="heightAboveGround"/>
+                    </level-types>
+                </variable>
+                <variable name="aptmp" description="Apparent temperature">
+                    <level-types>
+                        <level-type type="single-level" name="heightAboveGround"/>
+                    </level-types>
+                </variable>
+                <variable name="tmax" description="Maximum temperature">
+                    <level-types>
+                        <level-type type="single-level" name="heightAboveGround"/>
+                    </level-types>
+                </variable>
+                <variable name="tmin" description="Minimum temperature">
+                    <level-types>
+                        <level-type type="single-level" name="heightAboveGround"/>
+                    </level-types>
+                </variable>
+                <variable name="10u" description="10 metre U wind component">
+                    <level-types>
+                        <level-type type="single-level" name="heightAboveGround"/>
+                    </level-types>
+                </variable>
+                <variable name="10v" description="10 metre V wind component">
+                    <level-types>
+                        <level-type type="single-level" name="heightAboveGround"/>
+                    </level-types>
+                </variable>
+                <variable name="iceg" description="Ice growth rate">
+                    <level-types>
+                        <level-type type="single-level" name="heightAboveSea"/>
+                    </level-types>
+                </variable>
+                <variable name="cpofp" description="Percent frozen precipitation">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="cprat" description="Convective precipitation rate">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="prate" description="Precipitation rate">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="tp" description="Total Precipitation">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="acpcp" description="Convective precipitation (water)">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="watr" description="Water runoff">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="csnow" description="Categorical snow">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="cicep" description="Categorical ice pellets">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="cfrzr" description="Categorical freezing rain">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="crain" description="Categorical rain">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="lhtfl" description="Latent heat net flux">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="shtfl" description="Sensible heat net flux">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="gflux" description="Ground heat flux">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="uflx" description="Momentum flux, u component">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="vflx" description="Momentum flux, v component">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="sr" description="Surface roughness">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="fricv" description="Frictional velocity">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="u" description="Zonal flux of gravity wave stress">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="v" description="Meridional flux of gravity wave stress">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="veg" description="Vegetation">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="slt" description="Soil type">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="wilt" description="Wilting Point">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="fldcp" description="Field Capacity">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="SUNSD" description="Sunshine Duration">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="lftx" description="Surface lifted index">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="cape" description="Convective available potential energy">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                        <level-type type="single-level" name="pressureFromGroundLayer"/>
+                    </level-types>
+                </variable>
+                <variable name="pwat" description="Precipitable water">
+                    <level-types>
+                        <level-type type="single-level" name="atmosphereSingleLayer"/>
+                    </level-types>
+                </variable>
+                <variable name="cwat" description="Cloud water">
+                    <level-types>
+                        <level-type type="single-level" name="atmosphereSingleLayer"/>
+                    </level-types>
+                </variable>
+                <variable name="tozne" description="Total ozone">
+                    <level-types>
+                        <level-type type="single-level" name="atmosphereSingleLayer"/>
+                    </level-types>
+                </variable>
+                <variable name="lcc" description="Low cloud cover">
+                    <level-types>
+                        <level-type type="single-level" name="lowCloudLayer"/>
+                    </level-types>
+                </variable>
+                <variable name="mcc" description="Medium cloud cover">
+                    <level-types>
+                        <level-type type="single-level" name="middleCloudLayer"/>
+                    </level-types>
+                </variable>
+                <variable name="hcc" description="High cloud cover">
+                    <level-types>
+                        <level-type type="single-level" name="highCloudLayer"/>
+                    </level-types>
+                </variable>
+                
+                <variable name="gh" description="Geopotential Height">
+                    <level-types>
+                        <level-type type="single-level" name="cloudCeiling"/>
+                        <level-type type="single-level" name="tropopause"/>
+                        <level-type type="pressure-level" name="isobaricInhPa"/>
+                        <level-type type="single-level" name="maxWind"/>
+                        <level-type type="single-level" name="isothermZero"/>
+                        <level-type type="single-level" name="highestTroposphericFreezing"/>
+                        <level-type type="single-level" name="potentialVorticity"/>
+                    </level-types>
+                </variable>
+                <variable name="pres" description="Pressure">
+                    <level-types>
+                        <level-type type="single-level" name="lowCloudBottom"/>
+                        <level-type type="single-level" name="convectiveCloudBottom"/>
+                        <level-type type="single-level" name="middleCloudBottom"/>
+                        <level-type type="single-level" name="highCloudBottom"/>
+                        <level-type type="single-level" name="convectiveCloudTop"/>
+                        <level-type type="single-level" name="lowCloudTop"/>
+                        <level-type type="single-level" name="middleCloudTop"/>
+                        <level-type type="single-level" name="maxWind"/>
+                        <level-type type="single-level" name="potentialVorticity"/>
+                        <level-type type="single-level" name="heightAboveGround"/>
+                    </level-types>
+                </variable>
+                <variable name="tcc" description="Total Cloud Cover">
+                    <level-types>
+                        <level-type type="single-level" name="convectiveCloudLayer"/>
+                        <level-type type="single-level" name="boundaryLayerCloudLayer"/>
+                        <level-type type="pressure-level" name="isobaricInhPa"/>
+                        <level-type type="single-level" name="atmosphere"/>
+                    </level-types>
+                </variable>
+                <variable name="cwork" description="Cloud work function">
+                    <level-types>
+                        <level-type type="single-level" name="atmosphereSingleLayer"/>
+                    </level-types>
+                </variable>
+                <variable name="dswrf" description="Downward short-wave radiation flux">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="dlwrf" description="Downward long-wave radiation flux">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="uswrf" description="Upward short-wave radiation flux">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                        <level-type type="single-level" name="nominalTop"/>
+                    </level-types>
+                </variable>
+                <variable name="ulwrf" description="Upward long-wave radiation flux">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                        <level-type type="single-level" name="nominalTop"/>
+                    </level-types>
+                </variable>
+                <variable name="hlcy" description="Storm relative helicity">
+                    <level-types>
+                        <level-type type="single-level" name="heightAboveGroundLayer"/>
+                    </level-types>
+                </variable>
+                <variable name="ustm" description="U-component storm motion">
+                    <level-types>
+                        <level-type type="single-level" name="heightAboveGroundLayer"/>
+                    </level-types>
+                </variable>
+                <variable name="vstm" description="V-component storm motion">
+                    <level-types>
+                        <level-type type="single-level" name="heightAboveGroundLayer"/>
+                    </level-types>
+                </variable>
+                <variable name="trpp" description="Tropopause pressure">
+                    <level-types>
+                        <level-type type="single-level" name="tropopause"/>
+                    </level-types>
+                </variable>
+                <variable name="icaht" description="ICAO Standard Atmosphere reference height">
+                    <level-types>
+                        <level-type type="single-level" name="tropopause"/>
+                        <level-type type="single-level" name="maxWind"/>
+                    </level-types>
+                </variable>
+                <variable name="q" description="Specific humidity">
+                    <level-types>
+                        <level-type type="single-level" name="heightAboveGround"/>
+                        <level-type type="single-level" name="pressureFromGroundLayer"/>
+                        <level-type type="pressure-level" name="isobaricInhPa"/>
+                    </level-types>
+                </variable>
+                <variable name="100u" description="100 metre U wind component">
+                    <level-types>
+                        <level-type type="single-level" name="heightAboveGround"/>
+                    </level-types>
+                </variable>
+                <variable name="100v" description="100 metre V wind component">
+                    <level-types>
+                        <level-type type="single-level" name="heightAboveGround"/>
+                    </level-types>
+                </variable>
+                <variable name="4lftx" description="Best (4-layer) lifted index">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="cin" description="Convective inhibition">
+                    <level-types>
+                        <level-type type="single-level" name="pressureFromGroundLayer"/>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="hpbl" description="Planetary boundary layer height">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="pt" description="Potential temperature">
+                    <level-types>
+                        <level-type type="single-level" name="sigma"/>
+                    </level-types>
+                </variable>
+                <variable name="plpl" description="Pressure of level from which parcel was lifted">
+                    <level-types>
+                        <level-type type="single-level" name="pressureFromGroundLayer"/>
+                    </level-types>
+                </variable>
+                <variable name="lsm" description="Land-sea mask">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="ci" description="Sea ice area fraction">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="al" description="Albedo">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="ist" description="Ice temperature">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable>
+                <variable name="vwsh" description="Vertical speed shear">
+                    <level-types>
+                        <level-type type="single-level" name="potentialVorticity"/>
+                        <level-type type="single-level" name="tropopause"/>
+                    </level-types>
+                </variable>
+            </variables>
+        </model>
+    </class>
+</config>

@@ -1,0 +1,127 @@
+<!--config file for ICON from DWD (ICON) model-->
+
+<!--Created 2023-08-21-->
+<!--Create ICON class configuration file-->
+
+<config>
+    <class name="ERA5_SINGLE_LEVEL">
+        <root_data value='cdsapi'/>
+        <product_type value='reanalysis'/>
+        <days_storage value='1000'/> <!--days of storage-->
+        <storage_format value='grib2'/> <!--format of the data-->
+        <time_format> <!--format of the time-->
+            <years_format value='YYYY'>
+                <first value='1940'/>
+                <last value='2023'/>
+            </years_format>
+            <months_format value='MM'>
+                <first value='01'/>
+                <last value='12'/>
+            </months_format>
+            <days_format value='DD'>
+                <first value='01'/>
+                <last value='31'/>
+            </days_format>
+            <hours_format value='HH:00'>
+                <first value='00:00'/>
+                <last value='23:00'/>
+            </hours_format>
+        </time_format>
+        <model_version value='reanalysis'/> <!--model version-->
+        <grid_type value='regular_latlon'> <!--grid type-->
+            <horizontal_resolution value='0p25'/> <!--resolution of the model-->
+        </grid_type>
+        <model name="ERA5_SINGLE_LEVEL">
+            <delay value='6'/> <!--delay of the data-->
+            <limit_last_day value='False'/> <!--limit last day-->
+            <type_observation value="obs-hours"/>
+            <obs-hours hour='00' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='01' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='02' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='03' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='04' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='05' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='06' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='07' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='08' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='09' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='10' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='11' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='12' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='13' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='14' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='15' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='16' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='17' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='18' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='19' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='20' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='21' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='22' delivery_hour='19' next_day='True'/>
+            <obs-hours hour='23' delivery_hour='19' next_day='True'/>
+            <levels>
+                <single-level>
+                    <surface/>
+                    <meanSea/>
+                </single-level>
+            </levels>
+            <variables>
+                <variable name="10m_u_component_of_wind" description="10 metre U wind component">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable> 
+                <variable name="10m_v_component_of_wind" description="10 metre V wind component">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable> 
+                <variable name="2m_dewpoint_temperature" description="2 metre dewpoint temperature">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable> 
+                <variable name="2m_temperature" description="2 metre temperature">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable> 
+                <variable name="mean_sea_level_pressure" description="Mean sea level pressure">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable> 
+                <variable name="mean_wave_direction" description="Mean wave direction">
+                    <level-types>
+                        <level-type type="single-level" name="meanSea"/>
+                    </level-types>
+                </variable> 
+                <variable name="mean_wave_period" description="Mean wave period">
+                    <level-types>
+                        <level-type type="single-level" name="meanSea"/>
+                    </level-types>
+                </variable> 
+                <variable name="sea_surface_temperature" description="Sea surface temperature">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable> 
+                <variable name="significant_height_of_combined_wind_waves_and_swell" description="Significant height of combined wind waves and swell">
+                    <level-types>
+                        <level-type type="single-level" name="meanSea"/>
+                    </level-types>
+                </variable> 
+                <variable name="surface_pressure" description="Surface pressure">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable> 
+                <variable name="total_precipitation" description="Total precipitation">
+                    <level-types>
+                        <level-type type="single-level" name="surface"/>
+                    </level-types>
+                </variable> 
+            </variables>
+        </model>
+    </class>
+</config>

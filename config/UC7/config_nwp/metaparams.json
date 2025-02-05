@@ -1,0 +1,28 @@
+{
+    "SOURCE": "FORECAST",
+	"MODEL": {
+        "GFS": true,
+        "ICON_GLOBAL": false,
+        "ICON_EU": true,
+        "IFS": false,
+        "ARPEGE_EU": false,
+        "ARPEGE_GLOBAL": false,
+        "AROME_0025": false,
+        "AROME_001": false,
+        "AROME_PI_001": false,
+        "AROME_PI_0025": false
+        },
+        "STEP": {
+            "MERGE": true,
+            "interpolate-temporally": false,
+            "interpolate-spatially": true,
+            "box": true
+        },
+        "PARAMETER": {
+            "grid": 0.15,
+            "western_lon": -5.0,
+            "eastern_lon": 10.0,
+            "southern_lat": 41.0,
+            "northern_lat": 52.0
+        }
+}

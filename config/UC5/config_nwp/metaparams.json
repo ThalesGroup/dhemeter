@@ -1,0 +1,21 @@
+{
+    "SOURCE":"FORECAST",
+        "MODEL": {
+            "ICON_EU": true,
+            "IFS": true
+        },
+        "STEP": {
+            "MERGE": true,
+            "interpolate-temporally": true,
+            "interpolate-spatially": true,
+            "box": true
+        },
+        "PARAMETER": {
+            "grid": 0.1,
+            "western_lon": -2.1,
+            "eastern_lon": 4.0,
+            "southern_lat": 40.8,
+            "northern_lat": 46.8
+        }
+    }
+

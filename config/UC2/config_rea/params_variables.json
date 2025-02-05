@@ -1,0 +1,41 @@
+{ 
+    "ERA5_SINGLE_LEVEL": { 
+        "variables": [ 
+            { 
+                "variable": "10m_u_component_of_wind", 
+                "description": "10 metre U wind component", 
+                "level_type": "single-level", 
+                "level_type_name": "surface", 
+                "levels": null 
+            }, 
+            { 
+                "variable": "10m_v_component_of_wind", 
+                "description": "10 metre V wind component", 
+                "level_type": "single-level", 
+                "level_type_name": "surface", 
+                "levels": null 
+            }, 
+            { 
+                "variable": "2m_dewpoint_temperature", 
+                "description": "2 metre dewpoint temperature", 
+                "level_type": "single-level", 
+                "level_type_name": "surface", 
+                "levels": null 
+            }, 
+            { 
+                "variable": "2m_temperature", 
+                "description": "2 metre temperature", 
+                "level_type": "single-level", 
+                "level_type_name": "surface", 
+                "levels": null 
+            }, 
+            { 
+                "variable": "total_precipitation", 
+                "description": "Total precipitation", 
+                "level_type": "single-level", 
+                "level_type_name": "surface", 
+                "levels": null 
+            } 
+        ] 
+    } 
+}

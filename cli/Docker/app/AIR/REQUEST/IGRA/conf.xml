@@ -1,0 +1,79 @@
+<!-- config file for IGRA -->
+
+<!--Created 2023-08-21 -->
+<!--Create IGRA class configuration file -->
+
+<config>
+    <class name="IGRA">
+            <root_data value= 'https://www.ncei.noaa.gov/data/integrated-global-radiosonde-archive/access/data-y2d/' />
+            <storage_format value='txt.zip'/>
+            <days_storage value='365'/>
+            <localisation_options>
+                <Id_type value='IGRA'/>
+                <latlon>
+                    <point lat='0' lon='0'/>
+                    <range min_lat='-90' max_lat='90' min_lon='0' max_lon='360'/>
+                </latlon>
+            </localisation_options>
+            <time_format value='YYYYMMDDHH'/>
+            <format value='raw'/>
+            <model name='IGRA'>
+                <limit_last_day value='False'/> 
+                <type_observation value="obs-hours"/>
+                <obs-hours hour='00' delivery_hour='19' next_day='True'/>
+                <obs-hours hour='12' delivery_hour='19' next_day='True'/>
+                <levels>
+                    <time-invariant>
+                        <info/>
+                    </time-invariant>
+                    <Pressure-level-LatLon>
+                        <Full-scale/>
+                    </Pressure-level-LatLon>
+                    <Altitude-level-LatLon>
+                        <Full-scale/>
+                    </Altitude-level-LatLon>
+                </levels>
+                <variables>
+                    <variable name="pressure" description="Reported pressure (Pa or mb * 100, e.g., 100000 = 1000 hPa or 1000 mb)">
+                        <level-types>
+                            <level-type type="Altitude-level-LatLon" name="Full-scale"/>
+                        </level-types>
+                    </variable>     
+                    <variable name="geopotential_height" description="Reported geopotential height (meters above sea level)">
+                        <level-types>
+                            <level-type type="Pressure-level-LatLon" name="Full-scale"/>
+                        </level-types>
+                    </variable>        
+                    <variable name="temperature" description="Reported temperature (degrees C to tenths, e.g., 11 = 1.1°C)">
+                        <level-types>
+                            <level-type type="Pressure-level-LatLon" name="Full-scale"/>
+                            <level-type type="Altitude-level-LatLon" name="Full-scale"/>
+                        </level-types>
+                    </variable>      
+                    <variable name="relative_humidity" description="Reported relative humidity (percent to tenths, e.g., 11 = 1.1%)">
+                        <level-types>
+                            <level-type type="Pressure-level-LatLon" name="Full-scale"/>
+                            <level-type type="Altitude-level-LatLon" name="Full-scale"/>
+                        </level-types>
+                    </variable>           
+                    <variable name="dew_point_depression" description="Reported dewpoint depression (degrees C to tenths, e.g., 11 = 1.1°C)">
+                        <level-types>
+                            <level-type type="Pressure-level-LatLon" name="Full-scale"/>
+                            <level-type type="Altitude-level-LatLon" name="Full-scale"/>
+                        </level-types>
+                    </variable>      
+                    <variable name="wind_direction" description="Reported wind direction(degrees from north 90=east)">
+                        <level-types>
+                            <level-type type="Pressure-level-LatLon" name="Full-scale"/>
+                            <level-type type="Altitude-level-LatLon" name="Full-scale"/>
+                        </level-types>
+                    </variable>      
+                    <variable name="wind_speed" description="Reported wind speed (meters per second to tenths, e.g., 11=1.1m/s)">
+                    <level-types>
+                        <level-type type="Pressure-level-LatLon" name="Full-scale"/>
+                        <level-type type="Altitude-level-LatLon" name="Full-scale"/>
+                    </level-types></variable>     
+                </variables>
+            </model>
+    </class>
+</config>

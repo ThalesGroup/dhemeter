@@ -1,0 +1,41 @@
+{
+    "ICON_EU": {
+        "variables": [
+            {
+                "variable": "t_2m",
+                "description": "Temperature at 2m above ground",
+                "level_type": "single-level",
+                "level_type_name": "heightAboveGround",
+                "levels": null
+            },
+            {
+                "variable": "td_2m",
+                "description": "Dew point temperature at 2m above ground",
+                "level_type": "single-level",
+                "level_type_name": "heightAboveGround",
+                "levels": null
+            },
+            {
+                "variable": "u_10m",
+                "description": "Zonal wind at 10m above ground",
+                "level_type": "single-level",
+                "level_type_name": "heightAboveGround",
+                "levels": null
+            },
+            {
+                "variable": "v_10m",
+                "description": "Meridional wind at 10m above ground",
+                "level_type": "single-level",
+                "level_type_name": "heightAboveGround",
+                "levels": null
+            },
+            {
+                "variable": "tot_prec",
+                "description": "Total precipitation (accumulated since model start)",
+                "level_type": "single-level",
+                "level_type_name": "surface",
+                "levels": null
+            }
+        ]
+    }
+}
