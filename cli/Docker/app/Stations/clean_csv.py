@@ -1,3 +1,8 @@
+# =============================================================================
+# Copyright 2025 Thales Group
+# Licensed under the APACHE 2 License. See LICENSE file in the project root for
+# full license information.
+# =============================================================================
 # function to clean the csv file containing the list of stations and their ICAO codes 
 # the list of ICAO codes is read from a csv file in ./Stations/isd_Station_Name.csv
 # if the ICAO code is not in the list of stations, it is removed from the list

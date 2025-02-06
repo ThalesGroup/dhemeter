@@ -1,3 +1,8 @@
+# =============================================================================
+# Copyright 2025 Thales Group
+# Licensed under the APACHE 2 License. See LICENSE file in the project root for
+# full license information.
+# =============================================================================
 # 1. Base image python 3.8 alpine
 FROM python:3.10-alpine
 

@@ -1,3 +1,8 @@
+# =============================================================================
+# Copyright 2025 Thales Group
+# Licensed under the APACHE 2 License. See LICENSE file in the project root for
+# full license information.
+# =============================================================================
 # shell script that runs the aggregation process : 
 # 1. Create the file structure calling the create_instance.sh script
 # 2. Get the right workflow to run

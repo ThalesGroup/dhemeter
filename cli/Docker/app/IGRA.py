@@ -1,3 +1,8 @@
+# =============================================================================
+# Copyright 2025 Thales Group
+# Licensed under the APACHE 2 License. See LICENSE file in the project root for
+# full license information.
+# =============================================================================
 # function to find the nearest IGRA code to a given lat/lon from a list of IGRA codes
 # the list of IGRA codes is read from a csv file in ./Stations/IGRA.csv
 

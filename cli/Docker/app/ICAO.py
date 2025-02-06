@@ -1,3 +1,8 @@
+# =============================================================================
+# Copyright 2025 Thales Group
+# Licensed under the APACHE 2 License. See LICENSE file in the project root for
+# full license information.
+# =============================================================================
 # function to find the nearest ICAO code to a given lat/lon from a list of ICAO codes
 # the list of ICAO codes is read from a csv file in ./Stations/isd_Station_Name.csv
 

@@ -1,4 +1,9 @@
 #!/bin/bash
+# =============================================================================
+# Copyright 2025 Thales Group
+# Licensed under the APACHE 2 License. See LICENSE file in the project root for
+# full license information.
+# =============================================================================
 
 # Check if an argument is passed
 if [ -z "$1" ]; then
