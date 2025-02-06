@@ -36,7 +36,10 @@ def main(output_dir, execution_file, logs_params, input_dir, option):
         filename_remaped = 'remaped_' + filename
         attempts += 1
         try:
-            remap_command = 'cdo -f grb2 remap,target_grid_' + option + '.txt,weights_' + option + '.nc ' + input_dir + filename + ' ' + output_dir + filename_remaped
+            print(os.getcwd())
+            print(os.listdir())
+            os.system("ls raw")
+            remap_command = 'cdo -f grb2 remap,/data/target_grid_' + option + '.txt,weights_' + option + '.nc ' + input_dir + '/' + filename + ' ' + output_dir + '/' + filename_remaped
             print(remap_command)
             os.system(remap_command)
             os.remove(input_dir + filename)

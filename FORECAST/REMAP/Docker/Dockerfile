@@ -1,7 +1,7 @@
 FROM alexgleith/cdo
 
-RUN mkdir /data/input
-RUN mkdir /data/output
+RUN mkdir /data/raw
+RUN mkdir /data/out
 RUN mkdir /data/config
 RUN mkdir /data/logs
 
