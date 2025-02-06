@@ -59,7 +59,7 @@ sh ./src/app.sh $(pwd)/params $(pwd)/RUN
 
 Instance's path will be returned in CLI
 
-## Output
+##  Outputs
 
 The execution of the program will create a folder structure in the output folder. 
 The entry point is the id of the request's execution, it will return a directory file name in ``./RUN/<datetime>-<uniqueid>`` :
