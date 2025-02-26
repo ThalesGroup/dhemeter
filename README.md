@@ -1,6 +1,7 @@
 # README.md
 ## Description
 DHEMETER: Data Hub for Environmental and METEorological Resources is an open-source tool designed to centralize and aggregate meteorological data from multiple APIs and providers (NOAA, ECMWF, Météo France, DWD, etc.). The project unifies this data into a coherent and homogeneous format (NetCDF), providing a single file that consolidates meteorological information.
+The software is distributed under the Apache license (see LICENSE.md) and uses third-party libraries that are distributed under their own terms (see THIRD_PARTY_LICENSES.md).
 
 The tool uses a microservices-based architecture to manage data processing pipelines. It is designed to be extensible and scalable, facilitating the integration of new data sources or features.
 
@@ -61,7 +62,7 @@ Instance's path will be returned in CLI
 
 ##  Outputs
 
-The execution of the program will create a folder structure in the output folder. 
+The execution of the program will create a folder structure in the output folder.
 The entry point is the id of the request's execution, it will return a directory file name in ``./RUN/<datetime>-<uniqueid>`` :
 ```bash
 <datetime>-<uniqueid>
