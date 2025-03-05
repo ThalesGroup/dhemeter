@@ -3,7 +3,7 @@
 ## Prerequisites
 ### Required Software
 - **Python 3.8+**
-- **Docker** (for microservices containerization)
+- **Docker** (Connect to docker hub to be able to pull docker images)
 - **make**
 - **jq**
 
@@ -11,10 +11,17 @@
 ## Installation
 
 1. **Clone the repository** :
-    ```bash
-    git clone https://github.com/thalesgroup/dhemeter.git
-    cd dhemeter
-    ```
+    
+    - Clone Repository :
+        ```bash
+        git clone https://github.com/thalesgroup/dhemeter.git
+        cd dhemeter
+        ```
+    - Get weights for remapping grids (attach it to REMAP step):
+        ```bash
+        curl -L -o dhemeter.zip https://www.kaggle.com/api/v1/datasets/download/thalesgroup/dhemeter && unzip -o dhemeter.zip -d ./FORECAST/REMAP/Docker/app && rm dhemeter.zip
+        ``` 
+
 2. **Build Containers with Make** :
     - Build weather forecast-related containers
         ```bash
@@ -49,7 +56,7 @@
     agregateur-forecast-merge                 latest    XXXXXXXXXX   463MB
     agregateur-forecast-clean_and_merge       latest    XXXXXXXXXX   608MB
     agregateur-forecast-box                   latest    XXXXXXXXXX   451MB
-    agregateur-forecast-remap                   latest    XXXXXXXXXX   451MB
+    agregateur-forecast-remap                 latest    XXXXXXXXXX   451MB
     ```
 
 You are now ready to go for a run : [README](./README.md)
