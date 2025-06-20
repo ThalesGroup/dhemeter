@@ -5,16 +5,16 @@
             "ERA5_SINGLE_LEVEL": true
         },
         "STEP": {
-            "MERGE": false,
+            "MERGE": true,
             "interpolate-temporally": false,
             "interpolate-spatially": false,
             "box": false
         },
         "PARAMETER": {
             "grid": false,
-            "western_lon": -5.0,
-            "eastern_lon": 10.0,
-            "southern_lat": 41.0,
-            "northern_lat": 52.0
+            "western_lon": -179.0,
+            "eastern_lon": 179.0,
+            "southern_lat": -89.0,
+            "northern_lat": 89.0
         }
 }

@@ -1,0 +1,195 @@
+<!--config file for ICON from DWD (ICON) model-->
+
+<!--Created 2023-08-21-->
+<!--Create ICON class configuration file-->
+
+<config>
+    <class name="ERA5_PRESSURE_LEVELS">
+        <root_data value='cdsapi'/>
+        <product_type value='reanalysis'/>
+        <days_storage value='1000'/> <!--days of storage-->
+        <storage_format value='grib2'/> <!--format of the data-->
+        <time_format> <!--format of the time-->
+            <years_format value='YYYY'>
+                <first value='1940'/>
+                <last value='2023'/>
+            </years_format>
+            <months_format value='MM'>
+                <first value='01'/>
+                <last value='12'/>
+            </months_format>
+            <days_format value='DD'>
+                <first value='01'/>
+                <last value='31'/>
+            </days_format>
+            <hours_format value='HH:00'>
+                <first value='00:00'/>
+                <last value='23:00'/>
+            </hours_format>
+        </time_format>
+        <model_version value='reanalysis'/> <!--model version-->
+        <coordinates> 
+            <west value='0.00'/>
+            <east value='359.50'/>
+            <south value='-90.00'/>
+            <north value='90.00'/>
+        </coordinates>
+        <grid_type value='regular_latlon'> <!--grid type-->
+            <horizontal_resolution value='0p5'/> <!--resolution of the model-->
+        </grid_type>
+        <model name="ERA5_PRESSURE_LEVELS">
+            <delay value='6'/> <!--delay of the data-->
+            <limit_last_day value='False'/> <!--limit last day-->
+            <type_observation value="obs-hours"/>
+            <obs-hours hour='00' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='01' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='02' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='03' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='04' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='05' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='06' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='07' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='08' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='09' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='10' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='11' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='12' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='13' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='14' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='15' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='16' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='17' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='18' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='19' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='20' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='21' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='22' delivery_hour='00' next_day='True'/>
+            <obs-hours hour='23' delivery_hour='00' next_day='True'/>
+            <levels>
+                <pressure-level>
+                    <isobaricInhPa unit='hPa'>
+                        <level value='1'/>
+                        <level value='2'/>
+                        <level value='3'/>
+                        <level value='5'/>
+                        <level value='7'/>
+                        <level value='10'/>
+                        <level value='20'/>
+                        <level value='30'/>
+                        <level value='50'/>
+                        <level value='70'/>
+                        <level value='100'/>
+                        <level value='125'/>
+                        <level value='150'/>
+                        <level value='175'/>
+                        <level value='200'/>
+                        <level value='225'/>
+                        <level value='250'/>
+                        <level value='300'/>
+                        <level value='350'/>
+                        <level value='400'/>
+                        <level value='450'/>
+                        <level value='500'/>
+                        <level value='550'/>
+                        <level value='600'/>
+                        <level value='650'/>
+                        <level value='700'/>
+                        <level value='750'/>
+                        <level value='775'/>
+                        <level value='800'/>
+                        <level value='825'/>
+                        <level value='850'/>
+                        <level value='875'/>
+                        <level value='900'/>
+                        <level value='925'/>
+                        <level value='950'/>
+                        <level value='975'/>
+                        <level value='1000'/>
+                    </isobaricInhPa>
+                </pressure-level>
+            </levels>
+            <variables>
+                <variable name="potential_vorticity" description="Potential vorticity">
+                    <level-types>
+                        <level-type type="pressure-level" name='isobaricInhPa'/>
+                    </level-types>
+                </variable>
+                <variable name="specific_rain_water_content" description="Specific rain water content">
+                    <level-types>
+                        <level-type type="pressure-level" name='isobaricInhPa'/>
+                    </level-types>
+                </variable>
+                <variable name="specific_snow_water_content" description="Specific snow water content">
+                    <level-types>
+                        <level-type type="pressure-level" name='isobaricInhPa'/>
+                    </level-types>
+                </variable>
+                <variable name="geopotential" description="Geopotential">
+                    <level-types>
+                        <level-type type="pressure-level" name='isobaricInhPa'/>
+                    </level-types>
+                </variable>
+                <variable name="temperature" description="Temperature">
+                    <level-types>
+                        <level-type type="pressure-level" name='isobaricInhPa'/>
+                    </level-types>
+                </variable>
+                <variable name="u_component_of_wind" description="U component of wind">
+                    <level-types>
+                        <level-type type="pressure-level" name='isobaricInhPa'/>
+                    </level-types>
+                </variable>
+                <variable name="v_component_of_wind" description="V component of wind">
+                    <level-types>
+                        <level-type type="pressure-level" name='isobaricInhPa'/>
+                    </level-types>
+                </variable>
+                <variable name="specific_humidity" description="Specific humidity">
+                    <level-types>
+                        <level-type type="pressure-level" name='isobaricInhPa'/>
+                    </level-types>
+                </variable>
+                <variable name="vertical_velocity" description="Vertical velocity">
+                    <level-types>
+                        <level-type type="pressure-level" name='isobaricInhPa'/>
+                    </level-types>
+                </variable>
+                <variable name="vorticity" description="Vorticity (relative)">
+                    <level-types>
+                        <level-type type="pressure-level" name='isobaricInhPa'/>
+                    </level-types>
+                </variable>
+                <variable name="divergence" description="Divergence">
+                    <level-types>
+                        <level-type type="pressure-level" name='isobaricInhPa'/>
+                    </level-types>
+                </variable>
+                <variable name="relative_humidity" description="Relative humidity">
+                    <level-types>
+                        <level-type type="pressure-level" name='isobaricInhPa'/>
+                    </level-types>
+                </variable>
+                <variable name="ozone_mass_mixing_ratio" description="Ozone mass mixing ratio">
+                    <level-types>
+                        <level-type type="pressure-level" name='isobaricInhPa'/>
+                    </level-types>
+                </variable>
+                <variable name="specific_cloud_liquid_water_content" description="Specific cloud liquid water content">
+                    <level-types>
+                        <level-type type="pressure-level" name='isobaricInhPa'/>
+                    </level-types>
+                </variable>
+                <variable name="specific_cloud_ice_water_content" description="Specific cloud ice water content">
+                    <level-types>
+                        <level-type type="pressure-level" name='isobaricInhPa'/>
+                    </level-types>
+                </variable>
+                <variable name="fraction_of_cloud_cover" description="Fraction of cloud cover">
+                    <level-types>
+                        <level-type type="pressure-level" name='isobaricInhPa'/>
+                    </level-types>
+                </variable>
+            </variables>
+        </model>
+    </class>
+</config>
