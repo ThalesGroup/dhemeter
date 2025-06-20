@@ -181,6 +181,3 @@ output/
 
 # ignore env files
 share/env.sh
-
-# gitlab CI/CD files
-.gitlab-ci.yml
