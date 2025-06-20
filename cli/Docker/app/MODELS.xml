@@ -19,14 +19,11 @@
             <PARAMETER name='southern_lat'/>
             <PARAMETER name='northern_lat'/>
         </NWP>
-        <!--
         <REANALYSIS workflow-name="agregateur-reanalysis">
             <MODEL name='ERA5_SINGLE_LEVEL' path='REANALYSIS/REQUEST/ERA5_SINGLE_LEVEL'/>
             <MODEL name='ERA5_PRESSURE_LEVELS' path='REANALYSIS/REQUEST/ERA5_PRESSURE_LEVELS'/>
 
             <STEP name='MERGE'/>
-            <STEP name='interpolate-spatially'/>
-            <STEP name='box'/>
 
             <PARAMETER name='grid'/>
             <PARAMETER name='western_lon'/>
@@ -34,6 +31,5 @@
             <PARAMETER name='southern_lat'/>
             <PARAMETER name='northern_lat'/>
         </REANALYSIS>
-        -->
     </SOURCES>
 </config>

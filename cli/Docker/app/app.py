@@ -150,19 +150,19 @@ build_request.write_json(params_path, selected_observations, name_file)
 if build_request.ask_merge():
     json_metaparams = build_request.set_metaparam(json_metaparams, source_name, json_label, 'MERGE', True)
 
-if source_name == 'NWP' or source_name == 'REANALYSIS':
+if source_name == 'NWP':
     if build_request.ask_spatial_interp():
         target_grid = nwp.select_grid_interpolation()
         json_metaparams = build_request.set_metaparam(json_metaparams, source_name, json_label, 'interpolate-spatially', True)
         json_metaparams = build_request.set_metaparam(json_metaparams, source_name, 'PARAMETER', 'grid', target_grid)
 
-    if build_request.ask_box_lat_lon():
-        western_lon,eastern_lon,southern_lat,northern_lat = nwp.select_box()
-        json_metaparams = build_request.set_metaparam(json_metaparams, source_name, json_label, 'box', True)
-        json_metaparams = build_request.set_metaparam(json_metaparams, source_name, 'PARAMETER', 'western_lon', float(western_lon))
-        json_metaparams = build_request.set_metaparam(json_metaparams, source_name, 'PARAMETER', 'eastern_lon', float(eastern_lon))
-        json_metaparams = build_request.set_metaparam(json_metaparams, source_name, 'PARAMETER', 'southern_lat', float(southern_lat))
-        json_metaparams = build_request.set_metaparam(json_metaparams, source_name, 'PARAMETER', 'northern_lat', float(northern_lat))
+if build_request.ask_box_lat_lon():
+    western_lon,eastern_lon,southern_lat,northern_lat = nwp.select_box()
+    json_metaparams = build_request.set_metaparam(json_metaparams, source_name, json_label, 'box', True)
+    json_metaparams = build_request.set_metaparam(json_metaparams, source_name, 'PARAMETER', 'western_lon', float(western_lon))
+    json_metaparams = build_request.set_metaparam(json_metaparams, source_name, 'PARAMETER', 'eastern_lon', float(eastern_lon))
+    json_metaparams = build_request.set_metaparam(json_metaparams, source_name, 'PARAMETER', 'southern_lat', float(southern_lat))
+    json_metaparams = build_request.set_metaparam(json_metaparams, source_name, 'PARAMETER', 'northern_lat', float(northern_lat))
 
 # NWP to match API : FORECAST & REANALYSIS
 if source_name == 'NWP':
