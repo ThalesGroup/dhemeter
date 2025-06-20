@@ -120,15 +120,16 @@ create-config:
 run:
 	@test -f ./src/app.sh || (echo "❌ Error: ./src/app.sh not found" && exit 1)
 	@test -d $(PARAMS_DIR) || (echo "❌ Error: Config directory $(PARAMS_DIR) does not exist" && exit 1)
+
 	@mkdir -p $(OUTPUT_DIR)
-
-	@echo "🚀 Running Dhemeter with config from: $(PARAMS_DIR)"
-	@echo "📤 Output will be saved to: $(OUTPUT_DIR)"
-	@sh ./src/app.sh $(realpath $(PARAMS_DIR)) $(realpath $(OUTPUT_DIR))
-
-	@echo "\n✅ Dhemeter execution finished."
-	@echo "📁 Check output folder: $(OUTPUT_DIR)"
-	@tree $(OUTPUT_DIR)
+	@OUTPUT_DIR_REALPATH=$$(realpath $(OUTPUT_DIR)) && \
+	PARAMS_DIR_REALPATH=$$(realpath $(PARAMS_DIR)) && \
+	echo "🚀 Running Dhemeter with config from: $$PARAMS_DIR_REALPATH" && \
+	echo "📤 Output will be saved to: $$OUTPUT_DIR_REALPATH" && \
+	sh ./src/app.sh $$PARAMS_DIR_REALPATH $$OUTPUT_DIR_REALPATH && \
+	echo "\n✅ Dhemeter execution finished." && \
+	echo "📁 Check output folder: $$OUTPUT_DIR_REALPATH" && \
+	tree $$OUTPUT_DIR_REALPATH
 
 
 ##########################################################
