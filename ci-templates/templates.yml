@@ -1,0 +1,16 @@
+# compare_job.yml
+# This job will be used several times.
+# After each non-regression test, we use this template to compare the reference and result files.
+.compare_template:
+  image:
+    name: artifactory.thalesdigital.io/private-docker-aes-datavalo/floria/tests_non_regression/docker_images/python-3.10:latest
+    entrypoint: [""]
+  script:
+    - ls -lR ./tests_non_regression
+    - pip install xarray
+    - pip install h5netcdf
+    - pip install netcdf4
+    - pip install cfgrib
+    - python ci-scripts/pipeline_compare_xarrays.py $REF_PATH $RES_PATH
+  tags:
+    - autoscale
