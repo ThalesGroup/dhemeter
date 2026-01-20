@@ -1,5 +1,5 @@
-# 1. Base image 3.8.10-slim
-FROM python:3.8
+# 1. Base image python:3.10-slim
+FROM python:3.10-slim
 
 # sets the working directory for the container : all commands will be run from this directory
 WORKDIR /home/app
