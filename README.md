@@ -20,21 +20,40 @@ The tool uses a microservices-based architecture to manage data processing pipel
 
 In order to install the DHEMETER tool, please follow the [Installation Instructions](./INSTALL.md)
 
-## Setup a Run
+## Connecting to Data Providers
 
-Setup an API request trough 3 JSON files :
+Some data providers (e.g., ECMWF) require authentication credentials. To set your cds credentials for example, use the following command:
+
 ```bash
-├── metaparams.json : contains the general parameters about the request
-├── params_time.json : contains the time parameters about the request
-└── params_variables.json : contains the variables parameters about the request
+export DHEMETER_CDS_API_KEY=your-api-key
+```
+Get a quick overview of environment variables for service connection capabilities. Run this command to see the list of variables you need to provide:
+
+```bash
+make print-env-vars
 ```
 
-Setup your configuration directory for the API REQUEST, run the CLI and then let the program guide you:
+## Creating a Configuration
+
+DHEMETER uses a set of configuration files (JSON format) to define the request to be sent to the data providers.
+
+To create a configuration interactively, use the following `make` command:
+
 ```bash
-mkdir params
-docker run -it -v ./params:/home/app/parameters agregateur-cli
+make create-config
 ```
-Once you finished the request the following files will be created, these files are mandatory for running a request:
+This will:
+
+- Create the configuration directory (default: ./params) if it doesn't exist.
+- Launch the configuration CLI in a Docker container.
+- Store generated files in the mounted directory.
+
+You can customize the configuration and output directories like so:
+
+make create-config PARAMS_DIR=./myparams
+
+After completion, the following structure will be created in ./params:
+
 ```bash
 params
 ├── metaparams.json
@@ -46,19 +65,22 @@ See examples in [Request Examples](./config)
 
 ## Run Dhemeter
 
-To run the program, you need to use the following command, for now we will use absolute path to the request files :
+Once your request configuration is ready, you can run the program with:
 
 ```bash
-sh ./src/app.sh <absolute_path_to_your_config_folder> <absolute_path_to_your_output_folder>
+make run
 ```
 
-General Request example, let's consider that ``params`` contains JSON API arguments :
+By default, it will use:
+
+`./params` as the configuration directory
+`./output` as the output directory
+
+You can override these paths with for instance :
+
 ```bash
-mkdir RUN
-sh ./src/app.sh $(pwd)/params $(pwd)/RUN
+make run PARAMS_DIR=./config/UC1/config_rea OUTPUT_DIR=./output
 ```
-
-Instance's path will be returned in CLI
 
 ##  Outputs
 

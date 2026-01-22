@@ -77,7 +77,7 @@ fi
 # parse the configuration directory and the instance directory as arguments
 # try to run the workflow
 
-echo "Running the workflow..."
+echo "🚀 Running the workflow..."
 # run the app.py script in the workflow directory : parse the configuration directory and the instance directory and the share directory as arguments
 # execute the python script like : python3 app.py -c /path/to/config/directory -i /path/to/instance/directory -s /path/to/share/directory
 python3 "$workflow_dir/app.py" -c "$instance_dir/config" -i "$instance_dir" -s "$share_dir"

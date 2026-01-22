@@ -14,28 +14,21 @@
                 "level_type": "single-level", 
                 "level_type_name": "surface", 
                 "levels": null 
-            }, 
+            },
             { 
-                "variable": "2m_dewpoint_temperature", 
-                "description": "2 metre dewpoint temperature", 
+                "variable": "100m_u_component_of_wind", 
+                "description": "100 metre U wind component", 
                 "level_type": "single-level", 
                 "level_type_name": "surface", 
                 "levels": null 
             }, 
             { 
-                "variable": "2m_temperature", 
-                "description": "2 metre temperature", 
+                "variable": "100m_v_component_of_wind", 
+                "description": "100 metre V wind component", 
                 "level_type": "single-level", 
                 "level_type_name": "surface", 
                 "levels": null 
-            }, 
-            { 
-                "variable": "total_precipitation", 
-                "description": "Total precipitation", 
-                "level_type": "single-level", 
-                "level_type_name": "surface", 
-                "levels": null 
-            } 
+            }
         ] 
     } 
 }
